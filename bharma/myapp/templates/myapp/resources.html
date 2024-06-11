@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resource Page</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+        crossorigin="anonymous">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-+mWzp5yKvTsgMmoA2oPbav1oMZHpA4kSXl5F2+cplfFja0MLw9x4z5qhNX/iU8U0HKIhWbHu2Gv5i+buDSoaUg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding-top: 50px;
+        }
+
+        .card {
+            margin-bottom: 20px;
+        }
+
+        .card-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .card-text {
+            color: #666;
+        }
+
+        .donate-btn {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .donate-btn:hover {
+            background-color: #0056b3;
+        }
+
+        .fa-heart {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    
+
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <a class="navbar-brand" href="#">Disaster Management System</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="home.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Resource.html">Resources</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+
+
+
+
+
+
+
+    <div class="container">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Donate Money to Support Needy Families</h5>
+                <p class="card-text">Your monetary contribution can make a big difference in the lives of those in
+                    need. Click below to donate a small amount but contribute in big smile :) and support families affected by disasters.</p>
+                <button class="donate-btn" onclick="openRazorpay()">Donate Now</button>
+            </div>
+        </div>
+
+        <!-- Other card elements -->
+
+    </div>
+
+
+
+    <div class="container my-5">
+        <h1 class="text-center mb-4">Resources for Needy People</h1>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="card mb-4">
+                    <img src="food.jpg" class="card-img-top" alt="Resource Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Food Distribution</h5>
+                        <p class="card-text">In times of crisis, we provide essential nourishment to those affected by disasters. Our goal is to ensure that no one goes hungry during difficult times. Together, we can make a difference.</p>
+                        <a href="#" class="btn btn-primary">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="card mb-4">
+                    <img src="cloth.png" class="card-img-top" alt="Resource Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Clothing Drive</h5>
+                        <p class="card-text">Join us in providing essential clothing to those impacted by disasters. Your donations can make a significant difference in restoring dignity and warmth to families in need.</p>
+                        <a href="#" class="btn btn-primary">Learn More</a>
+                    </div>
+                </div>
+            </div>
+
+
+            <footer class="footer">
+                <div class="container">
+                    <span class="text-muted">© 2024 Disaster Management System Team Brahma. All rights reserved.</span>
+                </div>
+            </footer>
+
+    <!-- Bootstrap JS and Font Awesome -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h"></script>
+
+    <!-- Razorpay Script -->
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+    <script>
+        function openRazorpay() {
+            var options = {
+                "key": "rzp_test_XxcBi4GZcRiCLQ",
+                "amount": 1000, // Example amount in paise (INR 10)
+                "currency": "INR",
+                "name": "Needy Families Donation",
+                "description": "Donate to support needy families",
+                "handler": function (response) {
+                    // Handle successful payment response
+                    console.log(response);
+                    alert('Payment successful. Thank you for your donation!');
+                },
+                "prefill": {
+                    "name": "",
+                    "email": "",
+                    "contact": ""
+                },
+                "notes": {
+                    "address": "Razorpay Corporate Office"
+                },
+                "theme": {
+                    "color": "#007bff"
+                }
+            };
+            var rzp = new Razorpay(options);
+            rzp.open();
+        }
+    </script>
+</body>
+
+</html>

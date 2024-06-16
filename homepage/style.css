@@ -1,0 +1,61 @@
+*{
+    margin: 0; 
+    padding: 0; 
+    font-family: sans-serif;
+}
+
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #FF8852;
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+  
+  li {
+    float: left;
+  }
+  
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 15px;
+    text-decoration: none;
+  }
+  
+  /* li a:hover {
+    background-color: #111;
+  } */
+
+  /* using margin on home to ensure side bar has space and it matches with the diagram */
+  .home{
+    margin-left: 300px;
+  }
+
+  /* styling the current location part  */
+  .location{
+    padding: 0; 
+    margin-top: 10px;
+    margin-left: 300px;
+    font-size: 0.7rem;
+  }
+
+/* styling the camera icon */
+
+.camera{
+    font-size: 1.5rem;
+    margin-left: 10px; 
+    padding: 0;
+}
+.notification{
+    
+    font-size: 1.4rem;
+}
+
+
+
+

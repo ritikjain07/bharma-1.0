@@ -13,6 +13,9 @@ ul {
     background-color: #FF8852;
     font-weight: bold;
     font-size: 1.2rem;
+    position: absolute;
+    z-index: 1;
+    width: 500rem;
   }
   
   li {
@@ -56,6 +59,69 @@ ul {
     font-size: 1.4rem;
 }
 
+.sidebar{
+    margin-top: 10px; 
+    margin-left: 10px; 
+    width:20px; 
+    height: 20px; 
+    background-color: #FF8852;
+    border: none; 
+    font-size: 1.2rem;
+}
+
+.sos{
+    position: absolute;
+    z-index: 3;
+
+    margin-top: 250px;
+    text-align: center;
+    margin-left: 520px;
+}
+
+.sos-btn{
+    width: 200px; 
+    height: 200px; 
+    font-size: 1.5rem;
+    font-weight: bold;
+    background-color: #FF8852;
+    border: 10px solid ;
+    border-radius: 100px;
+    border-color: grey;
+}
+
+/* text-box */
+
+.text-box{
+  position: absolute;
+  z-index: 4;
+  margin-top: 20px;
+  margin-left: 450px;
+  margin-bottom: 200px;
+  text-align: center;
+  
 
 
+}
 
+.text-box p{
+
+  margin-top: 30px;
+  color: #3631A9; 
+}
+
+.text-box h1{
+
+  margin-top: 50px;
+}
+
+/* sidepannel */
+
+.sidepannel{
+
+  background-color: grey; 
+  width: 150px; 
+  height: 0px;
+  position: absolute; 
+  z-index: 0;
+
+}
